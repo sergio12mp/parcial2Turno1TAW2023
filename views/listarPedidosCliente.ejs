@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<h1></h1>
+
+<form>
+    <h1>Listado de Pedidos </h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Total</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <% datos.forEach(function(pedido) { %>
+            <tr>
+                <td> <%= pedido.InvoiceId %> </td>
+                <td> <%= pedido.BillingAddress %> </td>
+                <td> <%= pedido.BillingCity %> </td>
+                <td> <%= pedido.BillingState %> </td>
+                <td> <%= pedido.BillingCountry %> </td>
+                <td> <%= pedido.Total %> </td>
+                <td><a href="/editar/<%= pedido.InvoiceId %>">Editar</a></td>
+                <td><a href="/detalles/<%= pedido.InvoiceId %>">Detalle</a></td>
+            </tr>
+        <% }); %>
+    </table>
+
+</form>
+</body>
+</html>

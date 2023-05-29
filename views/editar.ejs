@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<h1></h1>
+
+<form action="/guardarPedido" method="post">
+    <h1>Datos del pedido</h1>
+    <input type="hidden" name="InvoiceId" value="<%= (datos ? datos.InvoiceId : '') %>" size="30" maxlength="30">
+    <input type="hidden" name="CustomerId" value="<%= (datos ? datos.CustomerId : '') %>" size="30" maxlength="30">
+    <input type="hidden" name="InvoiceDate" value="<%= (datos ? datos.InvoiceDate : '') %>" size="30" maxlength="30">
+    <input type="hidden" name="BillingPostalCode" value="<%= (datos ? datos.BillingPostalCode : '') %>" size="30"
+           maxlength="30">
+    <table>
+        <tr>
+            <td>Billing Address:</td>
+            <td><input type="text" name="BillingAddress" value="<%= datos.BillingAddress %>" size="30"
+                       maxlength="30">
+            </td>
+        </tr>
+        <tr>
+            <td>Billing City:</td>
+            <td><input type="text" name="BillingCity" value="<%= (datos ? datos.BillingCity : '') %>" size="40"
+                       maxlength="40">
+            </td>
+        </tr>
+        <tr>
+            <td>Billing State:</td>
+            <td><input type="text" name="BillingState" value="<%= (datos ? datos.BillingState : '') %>" size="30"
+                       maxlength="30">
+
+            </td>
+        </tr>
+        <tr>
+            <td>Total:</td>
+            <td><input type="text" name="Total" value="<%= (datos ? datos.Total : '') %>" size="25" maxlength="25">
+            </td>
+        </tr>
+
+
+        <tr>
+            <td colspan="2"><input value="Guardar" type="submit"></td>
+        </tr>
+    </table>
+
+</form>
+</body>
+</html>
